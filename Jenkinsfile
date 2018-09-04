@@ -4,7 +4,7 @@ node{
     }
     stage ('Compile-Package'){
       def mvnHome = tool name: 'M3', type: 'maven'
-        sh "${mvnHome}/bin/mvn package"
+        C:\Users\Omkar Kakarparthi\Downloads\apache-maven-3.5.4\bin package"
     }
  } 
      
