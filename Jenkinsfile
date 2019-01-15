@@ -1,10 +1,8 @@
 node{
-    stage ('SCM checkout'){
-        git 'https://github.com/github540/my-app'
-    }
-    stage ('Compile-Package'){
-      def mvnHome = tool name: 'M3', type: 'maven'
-       bat "C:\Users\Omkar Kakarparthi\Downloads\apache-maven-3.5.4\bin package"
-    }
- } 
-     
+    stage('Checkout'){
+        git credentialsId: 'github_key', url: 'https://github.com/github540/my-app'
+        }
+    stage('Compilie-Package'){
+        sh label: '', script: 'mvn package'
+        }
+}
